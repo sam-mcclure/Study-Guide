@@ -96,3 +96,45 @@
 * To find if two given nodes are conencted, at worst case, you'd have to go through all nodes, which is O(n) again
 
 * Number of edges can go up to O(n^2) so operations of O(|E|) can be costly. Want to keep things to O(|V|). Overall not efficient
+
+11/20/18
+
+## Adjacency Matrix
+
+* In order to keep the cost of lookups in a graph, you can store edges in a 2D matrix/array of size v*V
+
+* Use indices from the vertex list. A at [i][j] can be set to 1 if there is an edge from i to j, otherwise set to 0. For undirected graph, you'd need to set [i][j] and [j][i] to 1.
+
+* For undirected graph, you only have to go through half of the graph, since it's symmetrical
+
+* The time cost of finding all nodes adjacent to a specific node, you have to find the index from the vertex list, then go to that index in the adjacency matrix and scan that row. This will be O(|V|) operation
+
+* If we know the index, we can access an edge in constant time
+
+* If names are given, complexity for finding if two nodes are connected are O(|V|) from vertex list
+
+* We can store the vertices in a hash table to make lookup time constant
+
+* For a weighted graph, the value at [i][j] can be the weight of the edge, the other values can be set to infinity (a value that wouldn't be valid)
+
+* The adjacency matrix saves on time, but takes up more space. We're using v^2 space instead of E space. This is good for dense graphs (close to V^2 edges), but for sparse graphs, we're wasting a lot of memory
+
+* Most real world graphs will be sparse
+
+## Adjacency List
+
+* Adjacency matrixes are efficient for time, but not space. Don't need to keep track of edges that don't exist, this takes up to much space. Should be able to infer nodes are not connected by seeing which nodes are connected
+
+* Instead of storing edges as an array, you can keep a list of all nodes to which a node is connected
+
+* Can use a linked list or a binary search tree or an array to store values
+
+* Each row can be a one-dimensional array of the connected nodes to the node at that index. Will be space of O(|E|). Worst case lookup is linear O(|V|). If the rows are sorted, can use a binary search. Keeping the arrays sorted is costly in other ways
+
+* In order to add or delete nodes, in an adjacency matrix it's easy, but for adjacency list, you have to dynamically change the array.
+
+* If each row was a linked list, insertion and deletion gets easier. Would need a linked list for each node. Create array of pointers that point to head of linked list
+
+* Adjacency list is a linked list. For weighted graph, store an extra field in each node. Otherwise, each node has a value and a pointer to next node
+
+* Space complexity is O(|E| + |V|). Most graphs are sparse, so this is okay. 

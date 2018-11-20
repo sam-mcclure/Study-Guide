@@ -14,3 +14,23 @@
 
 5. What are the valid values for an object's prototype?
 - Object or null
+
+# Closures
+
+6. What are the benefits of a Javascript closure?
+- Closures allows a function to access variables from an enclosing scope - environment - even after it leaves the scope in which it was declared. They allow data encapsulation - the idea that some data should not be directly exposed to the user
+
+7. Formally define a Javascript closure
+- The combination of a function and the lexical environment from which it was declared.
+
+8. Give an example of a closure
+```js
+function sandwichMaker(mainIngredient){
+    return function(filling){
+        return mainIngredient + "and" filling;
+    };
+}
+```
+
+9. What is data encapsulation?
+- Data encapsulation is the idea that some data should not be directly exposed to a user

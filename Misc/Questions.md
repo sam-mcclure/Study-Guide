@@ -14,3 +14,6 @@
 
 4. What is mobile-first design? Be as specific as possible.
 - Designing for mobile devices before designing for desktop or other devices. This will make the page display faster on smaller devices. Instead of changing styles when the width gets smaller, we should change when the width gets larger
+
+5. Give a high level overview of how CSS grids work.
+- For CSS grid, you can define how many rows and columns you want and what the size of each should be. For example, you could have a grid-template-column of 100px 100px 100px and a grid-template-row of 200px 200px and this would create a grid with 3 columns of 100 px and two rows of 200px. Items placed into this grid will fill that space. Individual items can also be changed to take up different portions of the grid

@@ -21,8 +21,24 @@ Being able to store data in the user's browser allows you to easily recreate tho
 
 10. Accessibility - HTML5 makes creating accessible sites easier for two main reasons: semantics and ARIA. The new HTML headings like <header>, <footer>, and <nav> allow screen readers to easily access content. ARIA is a W3C spec that is mainly used to assign specific rols ro elements in an HTML document, essentially creating important landmarks on the page.
 
+# CSS
+
+## Media Query
+
 - Media query is a CSS3 technique. It uses the @media rule to include a block of CSS properties only if a certain condition is true. You can add a size breakpoint where certain parts of the design will behave differently on each side of the breakpoint
 
 - Always design for mobile first. Should change design when width gets larger instead of smaller
 
 - Media queries can also be used to change layout of a page depending on the orientation of the browser. You can also hide elements on different screen sizes
+
+## CSS Grid
+
+* Grid layouts are fundamental to the design of websites and the CSS grid module is the most powerful and easiest tool for creating it
+
+* The two core ingredients of a CSS Grid are the wrapper(parent) and the items(children). The wrapper is the actual grid and the items are the content inside the grid
+
+* To turn the wrapper div into a grid, you simply give it a display property of grid
+
+* To make the grid two-dimensional, we'll need to define the columns and rows. You can use the grid-template-row and grid-template-column properties. You get as many rows/columns as you fill in values for( ie grid-template-columns: 100px 100px 100px; makes 3 columns)
+
+* In order to resize specific items in a grid, you can use grid-column-start and grid-column-end to make a specific item take up multiple column spaces. Or grid-column 1/4

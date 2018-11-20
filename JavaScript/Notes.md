@@ -17,3 +17,13 @@
 * The 'prototype' property only has such a special effect when it is set to a constructor function and invoked with new
 
 * By default, all functions have F.prototype = { constructor: F}, so we can get the constructor of an object by accessing its 'constructor' property
+
+# Closures
+
+* **Closure** - The combination of a function and the lexical environment from which it was declared. Closure allows a function to access variables from an enclosing scope - environment - even after it leaves the scope in which it was declared
+
+* The returned function can access variables from the enclosing scope
+
+* It can refer to outer scope variables even after the outer function has returned
+
+* One of the main benefits of closures is that it allows data encapsulation - the idea that some data should not be directly exposed
