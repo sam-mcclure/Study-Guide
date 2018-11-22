@@ -27,3 +27,33 @@
 * It can refer to outer scope variables even after the outer function has returned
 
 * One of the main benefits of closures is that it allows data encapsulation - the idea that some data should not be directly exposed
+
+# Event Loop
+
+* The heap is where memory allocation happens and the call stack is where the stack frames are
+
+* WebAPIs are things that the browser provides, like DOM, Ajax, setTimeout etc
+
+* JavaScript is a single threaded programming language. It has a single call stack and can only run one thing at a time.
+
+* Callstack is a data structure that records where in the program we are. If we step into a function, we add something to the top of the stack. If we return from a function, we pop something off of the stack
+
+* Things that are slow on the stack can block other functions
+
+* You have to wait until the processes are done. If you're making a network request, this could be a long time
+
+* Browser can't do anything/is stuck until first requests return.
+
+* The solution? Asynchronous callbacks. You run code/a response and get a response later
+
+* When a web API/ async action is finished, it gets pushed into the task queue.
+
+* The event loop looks at the call stack and the task queue. If the stack is empty, it takes the first thing out of the task queue and pushes it onto the callstack to be executed
+
+* If you want to defer something until the stack is clear, you can call setTimeout 0. This will push it into the task queue instead of the callstack
+
+* All of the webAPIs/async callbacks work this way. They will get added to the task queue when completed
+
+* setTimeout does not guarantee that the function returns in that time, rather that is the minimum possible time for the function to run. May need to wait for other actions in the task queue
+
+* Render is given higher priority than other callbacks. It also has to wait for other actions to finish

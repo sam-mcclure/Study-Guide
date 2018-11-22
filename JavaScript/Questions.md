@@ -34,3 +34,11 @@ function sandwichMaker(mainIngredient){
 
 9. What is data encapsulation?
 - Data encapsulation is the idea that some data should not be directly exposed to a user
+
+# Event Loop
+
+10.  What is the difference between the memory heap and call stack in javascript?
+- The memory heap is where memory allocation happens. The call stack is were stack frames are/where you store and execute actions
+
+11. What is one problem with programming languages that are fully single-threaded?
+- Single a single-threaded language can only execute one action at a time, if an action takes a long time to finish, all other actions will have to wait for it and the browser can get stuck

@@ -138,3 +138,23 @@
 * Adjacency list is a linked list. For weighted graph, store an extra field in each node. Otherwise, each node has a value and a pointer to next node
 
 * Space complexity is O(|E| + |V|). Most graphs are sparse, so this is okay. 
+
+11/21/18
+
+# BFS/DFS for Graphs
+
+* Trees are a type of graph, but graphs are not a type of tree
+
+* Depth-First (goes from top to bottom and back up) traversal requires a stack
+
+* DFS - Take first node, node A, and push it into the stack and visit it. Take all vertices connected to A and pick the 'least' (B), push it onto the stack and visit it. Then check adjacent unvisited vertices of B and take the least. Keep going until you've visited all vertices. When there are no nodes left, you pop off the top of the stack until you get to a node that has new nodes to visit
+
+* Breadth First traversal uses queues. 
+
+* Main differece of Depth-First Traversal and Breadth-First traversal for grpahs is that DFS uses a stack (LIFO) and BFS uses a Queue (FIFO)
+
+* For BFS, we're going to start at vertex A and visit it, then visit least near node (B) and add it to the queue. We don't visit it yet. Instead, we add all nodes adjacent to A and add those vertices to the queue in asceding order (B - D - G). When there are no connected vertices left, you shift off the first (A) and move to the next node (B). You visit that node, shift it off, and add all of its adjacent vertices to the queue.
+
+* Unlike trees, graphs may contain cycles, so we may come to the same node again. To avoid processing a node more than once, we use a boolean visited array.
+
+* Time complexity of DFS is O(|V| + |E|)

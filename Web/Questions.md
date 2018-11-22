@@ -15,3 +15,15 @@ Uniform Interface (ensure that there is a common language between servers and cl
 
 3. Walk through an arbitrary example of a RESTful request/response cycle, and describe what makes it RESTful
 - For one of my projects, I was getting the top trending search terms from GoogleTrends. I made an HTTP GET request to GoogleTrends and got back a response with html elements that I could parse to get the data I wanted. This was a RESTful cycle because my client had to hit the google trends server, the two didn't keep track of each other's state, if I wanted to get more trends, I would have to make the request again, and the response had a uniform interface of a representation of hypermedia resources
+
+# Web
+
+4. What happens when you type in www.google.com and hit enter?
+-1. You type www.google.com into the address bar of your browser and hit enter
+2. The browser checks the cache for a DNS record to find the corresponding IP address of www.google.com
+3. If the requested URL is not in the cache, ISP's DNS server initiates a DNS query to find the IP address of the server that hosts www.google.com
+4. The browser initiates a TCP connection with the server
+5. The browser sends an HTTP request to the web server
+6. The server handles the request and sends back a response
+7. The server sends out an HTTP response
+8. The browser displays the content, typically HTML

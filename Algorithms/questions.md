@@ -48,3 +48,9 @@ The most frequently used operations would be finding all nodes connected to a no
 
 13. What benefits do we get from an Adjacency List?
 - By only holding the data of edges that exist, an adjacency list takes up much less space than an adjaceny matrix (which holds values for edges that don't exist). But, because we are storing each node and it's connected nodes, finding the connected nodes or if there is an edge between nodes is reduced to O(|V|). Adding and deleting nodes is also made easy by inserting them into a list. This takes up less space than an adjacency matrix while giving faster lookup times than a single list.
+
+14. What are the steps for DFS on a graph?
+-You take your starting node, visit it, and find the vertex connected to it that has the lowest value (ie if start was A, next lowest would be B). That vertex gets added to the stack and then you visit it. You find the lowest value node connected to that node and add it to the stack, repeating the process. When a node has no connected vertices that haven't been visited, you pop it off the stack and check the last node in the stack. Continue until the stack is empty or the given value is found
+
+15. What supporting data structure might you use for BFS and DFS, respectively?
+- DFS uses a stack (LIFO) and BFS uses a queue (FIFO)
