@@ -160,7 +160,7 @@
 
 * Time complexity of DFS is O(|V| + |E|)
 
-# W2D1
+# Week 2
 ## Recursion
 
 * **Recursion** - The process in which a function calls itself directly or indirectly
