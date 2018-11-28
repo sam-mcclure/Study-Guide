@@ -1,3 +1,5 @@
+# Week 1
+
 1. Name 5 benefits of HTML5
 
     1. Video and Audio tags
@@ -17,3 +19,17 @@
 
 5. Give a high level overview of how CSS grids work.
 - For CSS grid, you can define how many rows and columns you want and what the size of each should be. For example, you could have a grid-template-column of 100px 100px 100px and a grid-template-row of 200px 200px and this would create a grid with 3 columns of 100 px and two rows of 200px. Items placed into this grid will fill that space. Individual items can also be changed to take up different portions of the grid
+
+# Week 2
+
+1. What is a state tree in the context of Redux?
+- A state tree in Redux is a single JavaScript object that contains all of the information and changes in the application, including the data and UI state
+
+2. Why don't we want to modify (i.e. mutate) our redux state?
+- It keeps code reliable and predictable. You don't have to specifically make anything in the state as long as the actions work and if the actions are the only thing that touches the state, you won't accidentally change it when you don't intend to
+
+3. What is a pure function? Impure function?
+- A pure function is one whose returned value depends solely on the values of their arguments. They do not have observable side effects, such as network or database calls, they are predictable, and they do not modify the values passed to them. An impure functions may call the database or the network, they may have side effects, may operate on the DOM, and may override the values given to them
+
+4. Describe in detail what a redux reducer is. What makes it a pure function?
+- The reducer takes in the previous state of the application and the action being dispatched and returns the next state of the app. It's a pure function because it does not modify the arguements given to it and has no side effects. It takes in the state and returns a new object based on the dispatched action.

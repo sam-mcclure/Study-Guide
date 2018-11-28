@@ -1,4 +1,5 @@
-# REST
+# Week 1
+## REST 
 
 * Representation State Transfer - A set of design principles for making network communication more scalable and flexible
 
@@ -28,7 +29,7 @@
 
 3. Code on Demand - Optional constraint - refers to the ability for a server to send executable code to the client (ie HTML's script tag)
 
-# What happens when you type a URL into a browser and hit enter?
+## What happens when you type a URL into a browser and hit enter?
 
 1. You type in www.google.com into the address bar in your browser
 2. The browser checks the cache for a DNS record to find the corresponding IP address of www.google.com
@@ -52,3 +53,31 @@
 7. The server sends out an HTTP response
     - The server response contains the web page you requested as well as the status code, compression type (Content-Encoding), how the cache the page (Cache-Control), any cookies to set, privacy info, etc
 8. The browser displays the HTML content (for HTML responses, which is the most common)
+
+# Week 2
+
+## HTTP Methods
+
+1. GET - The GET method is used to retrieve information from the given server using a given URI. Requests using GET should only retrieve data and should have no other effect on the data
+- A GET Request retrieves data from a web server by specifying parameters in the URL protion of the request. This is the main method used for document retrieval
+
+2. HEAD - Same as GET, but transfers status line and header section only
+- Functionally similar to GET, except that the server replies with a response line and headers, but no entity-body
+
+3. POST - A POST request is used to send data to the server, for example, customer info, file upload, etc, using HTML forms
+- Used when you want to send some data to the server
+
+4. PUT - Replaces all current representations of the target resource with the uploaded content
+- Used to request the server to store the included entitity-body at a location specified by the given URL
+
+5. DELETE - Removes all current representations of the target resource given by a URI
+- Used to request the server to delete the given file at the root of the server
+
+6. CONNECT - Establishes a tunnel to the server identified by a URI
+- Used by the client to establish a network connection to a web server over HTTP.
+
+7. Options - Describes the communication options for the target resource
+- Used by the client to find out the HTTP methods and other options supported by a web server. The client can specify a URL for the OPTIONS method, or an asterisk * to refer to the entire server.
+
+8. TRACE - Performs a message loop-back test along the path to the target resource
+- Used to echo the contents of an HTTP Request back to the requester which can be used for debugging purpose at the time of development

@@ -1,4 +1,5 @@
-# REST
+# Week 1
+## REST
 
 1. What are the three primary Fielding constraints? (Bonus if you can say who Fielding is!)
 - Roy T. Fielding wrote a set of design principles for web architecture is 2000 in his PhD dissertation. The three main principals are: 
@@ -16,7 +17,7 @@ Uniform Interface (ensure that there is a common language between servers and cl
 3. Walk through an arbitrary example of a RESTful request/response cycle, and describe what makes it RESTful
 - For one of my projects, I was getting the top trending search terms from GoogleTrends. I made an HTTP GET request to GoogleTrends and got back a response with html elements that I could parse to get the data I wanted. This was a RESTful cycle because my client had to hit the google trends server, the two didn't keep track of each other's state, if I wanted to get more trends, I would have to make the request again, and the response had a uniform interface of a representation of hypermedia resources
 
-# Web
+## Web
 
 4. What happens when you type in www.google.com and hit enter?
 -1. You type www.google.com into the address bar of your browser and hit enter
@@ -27,3 +28,17 @@ Uniform Interface (ensure that there is a common language between servers and cl
 6. The server handles the request and sends back a response
 7. The server sends out an HTTP response
 8. The browser displays the content, typically HTML
+
+# Week 2
+
+## HTTP
+
+1. What are the common HTTP methods? When are they used, and what do they accomplish? (This is a big one)
+    1. GET - Used to retrieve information from the given server using a given URI. Should only retrieve data. Main method used for document retrieval
+    2. HEAD - Similar to GET, but server only sends back response line and header (no body)
+    3. POST - Used to send data to the server from an HTML form (customer info, file upload, etc)
+    4. PUT - Replaces all current represenatations of the target resource with the uploaded content, ie 'store the included data at a location specified by the URL'
+    5. DELETE - Removes all current representations of the target resource given by a URI, used to delete the given file at the root of the server
+    6. CONNECT - Establishes a tunnel to the server identified by a URI, used by the client to establish a network connection to a web server over HTTP
+    7. OPTIONS - Describes the communication options for the target resource, used by the client to find out the HTTP methods and other options supported by a web server
+    8. TRACE - Performs a messages loop-back test along the path to the target resource, used to echo the contents of an HTTP Request back to the requester for debugging

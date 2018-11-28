@@ -1,4 +1,5 @@
-# Prototypes
+# Week 1
+## Prototypes
 
 * If F has a prototype property with a value of the object type, then the new operator uses it to set [[Prototype]] for the new object
 
@@ -18,7 +19,7 @@
 
 * By default, all functions have F.prototype = { constructor: F}, so we can get the constructor of an object by accessing its 'constructor' property
 
-# Closures
+## Closures
 
 * **Closure** - The combination of a function and the lexical environment from which it was declared. Closure allows a function to access variables from an enclosing scope - environment - even after it leaves the scope in which it was declared
 
@@ -28,7 +29,7 @@
 
 * One of the main benefits of closures is that it allows data encapsulation - the idea that some data should not be directly exposed
 
-# Event Loop
+## Event Loop
 
 * The heap is where memory allocation happens and the call stack is where the stack frames are
 
@@ -57,3 +58,13 @@
 * setTimeout does not guarantee that the function returns in that time, rather that is the minimum possible time for the function to run. May need to wait for other actions in the task queue
 
 * Render is given higher priority than other callbacks. It also has to wait for other actions to finish
+
+# Week 2
+
+## Hoisting
+
+* **Hoisting** the behavior of 'moving' var and function declarations to the top of their respective scopes during the compilation phase.
+
+* Function declarations are completely hoisted. This means that a declared function can be called before it is defined
+
+* Variables are partially hoisted. var decalarations are hoisted but not its assignments. let and const are not hoisted

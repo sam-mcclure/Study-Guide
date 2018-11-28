@@ -1,4 +1,4 @@
-# Graphs
+# Graphs - W1
 
 1.  How do we define a graph mathematically?
 - G = (V, E) A graph G is an ordered pair of a set V of vertices and a set E of edges
@@ -54,3 +54,17 @@ The most frequently used operations would be finding all nodes connected to a no
 
 15. What supporting data structure might you use for BFS and DFS, respectively?
 - DFS uses a stack (LIFO) and BFS uses a queue (FIFO)
+
+
+# Week 2
+
+## Recursion
+
+1. What is a base case in recursion? Why do we need one? Do we always need one?
+- A base case returns a value without making any subsequent recursive calls. Recursive problems always need a base case, or else they will run inifinitely and cause a stack overflow. 
+
+2. What exactly is a Stack Overflow?
+- When executed, a function is stored in a computer's call stack. For a recursive function, each recursive call adds to the stack, taking up more and more memory. If a base case is never reached, the call stack would get infinitely large and crash the computer. A stack overflow occurs when too many stacks are added and the computer ceases the function in order to protect itself.
+
+3. Describe direct and indirect recursion.
+- Direct recursion is when a function directly calls itself. Indirect recursion is when a function calls another function that then calls the original function either directly or indirectly.

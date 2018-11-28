@@ -1,4 +1,5 @@
-# Prototypes
+# Week 1
+## Prototypes
 
 1. Give a high level overview of what an object's prototype represents
 - When an object is created, a second object called a prototype is created. This prototype allows for object or 'class' inheritance. By defining attributes or methods on an object's prototype, you can use the new keyword to create another obeject with the same attributes and methods, fetched from the prototype
@@ -15,7 +16,7 @@
 5. What are the valid values for an object's prototype?
 - Object or null
 
-# Closures
+## Closures
 
 6. What are the benefits of a Javascript closure?
 - Closures allows a function to access variables from an enclosing scope - environment - even after it leaves the scope in which it was declared. They allow data encapsulation - the idea that some data should not be directly exposed to the user
@@ -35,10 +36,20 @@ function sandwichMaker(mainIngredient){
 9. What is data encapsulation?
 - Data encapsulation is the idea that some data should not be directly exposed to a user
 
-# Event Loop
+## Event Loop
 
 10.  What is the difference between the memory heap and call stack in javascript?
 - The memory heap is where memory allocation happens. The call stack is were stack frames are/where you store and execute actions
 
 11. What is one problem with programming languages that are fully single-threaded?
 - Single a single-threaded language can only execute one action at a time, if an action takes a long time to finish, all other actions will have to wait for it and the browser can get stuck
+
+# Week 2
+
+## Hoisting
+
+1. In which phase does hoisting occur?
+- Compilation
+
+2. What is the difference between function hoisting and variable hoisting?
+- Function decalarations are completely hoisted, meaning they can be called before they are defined. Variables are partially hoisted. Var declarations are hoisted, but not assignment (will show up as undefined if used before assignment). const and let are not hoisted (will throw reference error if used before assignment)
