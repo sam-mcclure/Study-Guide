@@ -160,6 +160,24 @@
 
 * Time complexity of DFS is O(|V| + |E|)
 
+* Travel the graph in layers
+
+* You take starting vertex, then add all vertices that are connected to the first vertex. Traverse nodes in layers. Since we have cycles, each node cound be visisted inifinite times, so use a boolean visited array (1 if visited, else 0)
+
+* The key data structure will be a queue (FIFO). Visted array starts will 0 for every node and the queue starts as empty
+
+W1D4
+
+## BFS 
+
+* Breadth First Traversal (or Search) for a graph is very similar to BFS for a tree. the only catch is, unlike trees, graphs may contain cycles, so we may come to the same node again. To avoid processing a node more than once, we use a boolean visited array. For simplicity, it is assumd that all vertices are reachable from the starting vertex
+
+* Time complexity O(V + E) where V is the number of vertices in the graph and E is the number of edges in the graph
+
+
+
+
+
 # Week 2
 ## Recursion
 
@@ -178,3 +196,9 @@
 * When any function is called from main(), the memory is allocated to it on stack. A recursive function calls itself and the memory for the called function is allocated on top of the memory allocated to calling the first function and a different copy of local variables is created for each function call. When the base case is reached, the function returns its value to the function by whom it is called and memory is de-allocated and the process continues
 
 * All problems that can be solved recursively can also be solved iteratively. Recursive programs have greater space and time requirements than iterative problems, but recursive solutions are cleaner and simpler
+
+## Dynamic Programming
+
+* Dynamic Programming is mainly an optimization over plain recursion. Wherever we see a recursive solution that has repeated calls for same inputs, we can optimze it using dynamic programming. The idea is to simply store the results of subproblems, so that we do not have to re-compute them when needed later
+
+* This simple optimization reduces time complexitites from exponential to ploynomial

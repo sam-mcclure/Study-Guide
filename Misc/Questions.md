@@ -20,6 +20,25 @@
 5. Give a high level overview of how CSS grids work.
 - For CSS grid, you can define how many rows and columns you want and what the size of each should be. For example, you could have a grid-template-column of 100px 100px 100px and a grid-template-row of 200px 200px and this would create a grid with 3 columns of 100 px and two rows of 200px. Items placed into this grid will fill that space. Individual items can also be changed to take up different portions of the grid
 
+6.  In which order do the React Lifecycle methods (including the optional ones) run?
+- componentWillMount, componentDidMount, componentWillReceiveProps, shouldComponentUpdate, componentWillUpdate, componentDidUpdate, componentWillUnmount
+
+7. In which lyfecycle methods should you make asynchronous fetches for data?
+- componentDidMount or componentDidUpdate
+
+8. In which lyfecycle methods can you call setState?
+- componentDidMount, componentWillReceiveProps, componentDidUpdate
+
+9. What are the React lifecycle methods? What are the use cases for each of those methods?
+- 1. componentWillMount - component is about to mount, can be used for App configuration and setting up external APIs for root component
+2. componentDidMount - component is on the page, used to start AJAX calls to load in data for the component
+3. componentWillReceiveProps - component is about to get new props, takes in nextProps, can compare to current props and act on particular prop changes to trigger state transisitions
+4. shouldComponentUpdate - component has received new props and wants to know if it should update. Defaults to true. Can be used to control exactly when component will re-render
+5. componentWillUpdate - component has decided to update. Can be used instead of componentWillReceiveProps if the component also has shouldComponentUpdate, but no access to previous props
+6. componentDidUpdate - component successfully updated. Can be used the same way as componentDidMount. Used to update the DOM in response to prop or state changes
+7. componentWillUnmount - the component is about to disappear. Used to cancel any leftover requests or eventListeners on the component
+
+
 # Week 2
 
 1. What is a state tree in the context of Redux?

@@ -44,6 +44,12 @@ function sandwichMaker(mainIngredient){
 11. What is one problem with programming languages that are fully single-threaded?
 - Single a single-threaded language can only execute one action at a time, if an action takes a long time to finish, all other actions will have to wait for it and the browser can get stuck
 
+12. Is Javascript a single-threaded language? Explain (Hint: This may not be a yes or no question)
+- Yes, JavaScript can only execute one function at a time and it must wait for that function to finish before the next function can execute. However, by using aynchronous callbacks, longer functions such as API requests will be taken out of the call stack until the request is finished, then added to the task queue, which will be added to the call stack when the call stack is empty. This is the event loop
+
+13. What's the event loop? How does it work?
+- The event loop is the way that JavaScript can execute asynchronous functions and still be single-threaded. Actions to be performed are added to the call stack. Async actions are executed by webAPIs and added to the task queue when finished. The event loop looks at the call stack and the task queue. If the stack is empty, it takes the first thing out of the event queue and pushes it onto the callstack to be executed. 
+
 # Week 2
 
 ## Hoisting

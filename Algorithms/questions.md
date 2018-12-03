@@ -55,6 +55,9 @@ The most frequently used operations would be finding all nodes connected to a no
 15. What supporting data structure might you use for BFS and DFS, respectively?
 - DFS uses a stack (LIFO) and BFS uses a queue (FIFO)
 
+16.  What are the steps for BFS on a graph?
+- You will need to start with an empty queue and a visited array that holds a boolean value for each node, initialized to 0. You take the first node and add it to the queue and change its value in the visited array to 1. You visit it, then add all of its adjaceny nodes to the queue. Until the queue is empty, you visit those nodes, updating their value in the visited array and adding their adjacent nodes to the queue. This continues until each node has been visited or the value is found.
+
 
 # Week 2
 

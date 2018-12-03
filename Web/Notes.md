@@ -54,6 +54,26 @@
     - The server response contains the web page you requested as well as the status code, compression type (Content-Encoding), how the cache the page (Cache-Control), any cookies to set, privacy info, etc
 8. The browser displays the HTML content (for HTML responses, which is the most common)
 
+* DNS is controlled by IANA (Internet Assigned Numbers Authority)). They have the mandate of making sure the correct technical procedures are in place to have a safe and stable Domain Name System. Which also invovles ICANN (Internet Corporation for Assigned Names and Numbers)
+
+* Besides providing technical operations of vital DNS resources, ICANN also defines policies for how the 'names and numbers' of the internet should run
+
+W1D4 
+
+## DNS
+
+* A Domain Name System is one of the key components to how requests are made from your browser
+
+* The DNS is often referred to as the backbone of the internet
+
+* Steps for a DNS request:
+1. A user asks their browser to visit www.google.com
+2. The browser queries a DNS resolver(usually their ISP) where's google.com?
+3. DNS Resolver queries the Root servers (which have a big important list that keeps this information). "where's .COM?' replies with Verisign
+4. DNS Resolver then queries Verisign - where is google.com?. Verisign replies with the nameservers and the IP address
+5. Hosting servers are queried with the IP address 'Give me the files for this IP address'
+6. Website files are delivered and rendered on the page so the user can use it
+
 # Week 2
 
 ## HTTP Methods

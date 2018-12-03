@@ -29,6 +29,9 @@ Uniform Interface (ensure that there is a common language between servers and cl
 7. The server sends out an HTTP response
 8. The browser displays the content, typically HTML
 
+5. Why do we need a DNS?
+- DNS is like a phone book for the internet. Computers store web domains as IP addresses, which are hard for humans to remember. Humans use domain names, such as google.com and DNS takes that name and finds the IP address associated with it, so the computer can process the request.
+
 # Week 2
 
 ## HTTP
