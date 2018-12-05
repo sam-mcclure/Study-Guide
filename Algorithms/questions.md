@@ -70,6 +70,9 @@ The most frequently used operations would be finding all nodes connected to a no
 20. What data structure do we use to assist with the topological sort algorithm?
 - A set and a stack
 
+21. Explain the steps of topological sort
+- Start at a vertex and add it to the set. You then find its children and add them to the set. If a node has no children, it is added to the stack. We keep visiting the children of the nodes in the set until they have all been added to the stack. If there are no children left for the nodes in the set, we pick any other unexplored node and repeat the process. When there are no unvisited nodes, you pop items from the stack until empty and that is the topological order
+
 
 # Week 2
 
