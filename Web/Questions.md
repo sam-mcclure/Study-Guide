@@ -32,6 +32,9 @@ Uniform Interface (ensure that there is a common language between servers and cl
 5. Why do we need a DNS?
 - DNS is like a phone book for the internet. Computers store web domains as IP addresses, which are hard for humans to remember. Humans use domain names, such as google.com and DNS takes that name and finds the IP address associated with it, so the computer can process the request.
 
+6. Explain TCP, and why it is a necessary protocol
+- Transmission Control Protocol. In order to send data between computers, the data is broken into many packets that can travel different routes. This prevents the data from bottlenecking and ensures that it is always taking the most efficient route. TCP is a standard for breaking these packets down, figuring out how to assemble them, and checking to see if all of the needed packets arrived at the destination. It ensures that all data is received and allows us to send and retrieve data faster by breaking it into packets.
+
 # Week 2
 
 ## HTTP

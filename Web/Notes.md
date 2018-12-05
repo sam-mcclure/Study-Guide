@@ -74,6 +74,24 @@ W1D4
 5. Hosting servers are queried with the IP address 'Give me the files for this IP address'
 6. Website files are delivered and rendered on the page so the user can use it
 
+W1D5
+
+## TCP
+
+* Information transer from computers doesn't follow a fixed path. Information travels between computers in a packet. It might take a different route every time. Digital info can be sent with IP packets.
+
+* If you have large information to send, it may be made into thousands of packets. Each knowns the address of where it came from and where it's going. Routers direct the path the packets take. The may arrive at different times and in different orders.
+
+* Routers choose the cheapest path for each packet, considering things such as time. Having options for paths make the internet fault tolerant. 
+
+* TCP (Transmission Control Protocal) - When the packets arrive, TCP does a full inventory of the received packets. If they're all there, it is a success. If some packets are missing, TCP will request that packet to be resent
+
+* TCP and Router systems are scalable
+
+* TCP/IP Transmission Control Protocol/Internet Protocol
+
+* The application layer has protocols like HTTP, the transport layer has TCP and UDP. After the application layer gets the data, it talks to the transport layer using ports. Once it gets the data, TCP breaks it into packets which can individually take the quickest route to the target computer. To make sure they can be put together correctly, TCP includes a header of instructions on how to assemble them and checks for any errors. The IP  (internet) layer checks the IP address. The last layer is something. 
+
 # Week 2
 
 ## HTTP Methods

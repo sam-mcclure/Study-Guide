@@ -38,6 +38,9 @@
 6. componentDidUpdate - component successfully updated. Can be used the same way as componentDidMount. Used to update the DOM in response to prop or state changes
 7. componentWillUnmount - the component is about to disappear. Used to cancel any leftover requests or eventListeners on the component
 
+10. Give one explanation for why we have to make AJAX requests in componentDidMount
+- If you try to make the AJAX request before the component is mounted, you can't guarantee that the AJAX request won't resolve before the component mounts. If it did, you'd by trying to call setState on an unmounted component, which will raise an error. Calling AJAX in componentDidMount ensures that there is a component to update
+
 
 # Week 2
 

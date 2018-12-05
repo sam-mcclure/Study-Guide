@@ -50,6 +50,12 @@ function sandwichMaker(mainIngredient){
 13. What's the event loop? How does it work?
 - The event loop is the way that JavaScript can execute asynchronous functions and still be single-threaded. Actions to be performed are added to the call stack. Async actions are executed by webAPIs and added to the task queue when finished. The event loop looks at the call stack and the task queue. If the stack is empty, it takes the first thing out of the event queue and pushes it onto the callstack to be executed. 
 
+14. When is using an IIFE necessary?
+- When you want to create a new variable scope. Any variables declared inside the IIFE are not visible to the outside world. Avoids polluting the global scope
+
+15. What is the syntax for an IIFE?
+- (function () {statements})();
+
 # Week 2
 
 ## Hoisting

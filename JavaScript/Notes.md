@@ -59,6 +59,18 @@
 
 * Render is given higher priority than other callbacks. It also has to wait for other actions to finish
 
+## IIFE
+
+* Immeadiately Invoked Function Expression. A function expression that is called immediately after you define it. It is usually used when you want to create a new variable scope
+
+* The (surrounding parenthesis) prevernts it from treating it as a function declaration
+
+* The final parenthesis() are executing the function expression
+
+* On IIFE you are calling the function exactly when you are defining it( result.push( function() {return i}))
+
+* Using IIFE enables you to attach private data to a function, creates fresh environments, and avoids polluting the global namespace
+
 # Week 2
 
 ## Hoisting

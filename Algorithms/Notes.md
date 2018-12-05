@@ -174,9 +174,29 @@ W1D4
 
 * Time complexity O(V + E) where V is the number of vertices in the graph and E is the number of edges in the graph
 
+W1D5
 
+## Topological Sort
 
+* Given a directed acyclic graph, topological sort is the ordering of vertices of this graph such that for every edge u,v going from u to v, u should always appear before v in the ordering
 
+* One application of topological sort is in the build system. The computer knows what order to download the packages based on dependencies using a topological sort
+
+* Use a set and a stack. The set has all the visited vertices while the stack has all the vertices in topological order
+
+* You start at a vertex and add it to the set. You then find it's children and add them to the set. If a node has no children, it is added to the stack. We keep visiting a node's children in the set and them putting them in the stack. If there are no children let for the nodes in the set, we pick any other unexplored node and repeat the process. Don't do anything if child is already in the visited set. When there are no unvisited nodes, you pop items from the stack and that is the topological order
+
+* Topological sorting for a Directed Acyclic Graph (DAG) is a linear ordering of vertices such that for every directed edge u,v vertex u comes before v in the ordering. Topological Sorting for a graph is not possible if the graph is not a DAG
+
+* There can be more the one topological sorting for a graph. The first vertex in topological sorting is always a vertex with in-degree as 0 (a vertex with no incoming edges)
+
+* In DFS, we print a vertex and then recursively call DFS for its adjacent vertices. In topological sorting, we need to print a vertex before its adjacent vertices.
+
+* We can modify DFS to find Topological sorting of a graph. In DFS, we start from a vertex, we first print it and then recursively call DFS for its adjacent vertices. In topological sorting, we use a temporary stack. We don't print the vertex immeadiately, we first recursively call topological sorting for all its adjacent vertices, then push it to a stack. Finally, print contents of the stack. Note that a vertex is pushed to the stack only when all of its adjacent vertices (and their adjacent vertices and so on) are already in the stack.
+
+* This is simply DFS with an extra stack, so time complexity is the same O(V+E)
+
+* Topological sorting is mainly used for scheduling jobs from the given dependencies among jobs. In compsci, applications of this type arise in instruction scheduling, ordering of formula cell evaluation when recomputing formula values in spreadsheets, logic synthesis, determining the order of compilation tasks to perform in makefiles, data serializatio, and resolving symbol dependencies in linkers
 
 # Week 2
 ## Recursion

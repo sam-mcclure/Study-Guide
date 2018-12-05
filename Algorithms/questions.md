@@ -58,6 +58,18 @@ The most frequently used operations would be finding all nodes connected to a no
 16.  What are the steps for BFS on a graph?
 - You will need to start with an empty queue and a visited array that holds a boolean value for each node, initialized to 0. You take the first node and add it to the queue and change its value in the visited array to 1. You visit it, then add all of its adjaceny nodes to the queue. Until the queue is empty, you visit those nodes, updating their value in the visited array and adding their adjacent nodes to the queue. This continues until each node has been visited or the value is found.
 
+17. Give an example of a use-case for Topological Sort
+- File dependencies in a build system. The computer needs to know in which order to download files
+
+18. What is a difference between Topological Sort and DFS?
+- For DFS, you print a vertex and then recursively call DFS for its adjacent vertices. In topological sorting, we need to print a vertex before its adjacent vertices. So, a vertex can only be added to the final stack if it has no dependencies.
+
+19. On which types of Graphs can we do a topological sort?
+- Directed Acyclic Graph (DAG)
+
+20. What data structure do we use to assist with the topological sort algorithm?
+- A set and a stack
+
 
 # Week 2
 
