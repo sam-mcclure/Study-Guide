@@ -73,6 +73,11 @@ The most frequently used operations would be finding all nodes connected to a no
 21. Explain the steps of topological sort
 - Start at a vertex and add it to the set. You then find its children and add them to the set. If a node has no children, it is added to the stack. We keep visiting the children of the nodes in the set until they have all been added to the stack. If there are no children left for the nodes in the set, we pick any other unexplored node and repeat the process. When there are no unvisited nodes, you pop items from the stack until empty and that is the topological order
 
+22. Explain the steps of Djikstra shortest-path algorithm.
+- You create a heap map that contains each vertex and a distance that starts at infinity. For the target vertex, you set the distance to 0. You also create an empty parent map and distance map. Use the extractMin method to extract the starting node, setting its parent to null and adding it to the distance map. Then, you find all nodes connected to the starting node and update their corresponding distance from the start and set parent to starting node. You extractMin from the heapMap again, adding the node to the distance map. For every connected node, if it is still in the heapMap, you set its distance to be the length from the current node to its child, plus the length of current node in the distance map. If this value is less than the current child node's distance, you update the distance in the heapMap and the parent node. You continue until there is nothing left in the heapMap.
+
+23. What is the time complexity of Djikstra's algorithm?
+- O(Elog(V)). Space complexity is O(V + E)
 
 # Week 2
 

@@ -198,6 +198,36 @@ W1D5
 
 * Topological sorting is mainly used for scheduling jobs from the given dependencies among jobs. In compsci, applications of this type arise in instruction scheduling, ordering of formula cell evaluation when recomputing formula values in spreadsheets, logic synthesis, determining the order of compilation tasks to perform in makefiles, data serializatio, and resolving symbol dependencies in linkers
 
+W1D6
+
+## Djikstra
+
+* Used to find single-source shortest path. Given a graph and a source vertex, you have to find the shortest path of every other vertex from this source vertex
+
+* Works on both directed and undirected graph as long as the weight on the edge is not negative
+
+* It is a greedy algorithm. We need to use a heap Map that has methods for add, extractMin, contains, and decrease (combination of binary heap and hash map)
+
+* To start, you pick the vertice that you want to travel from and inside the map, set the distance from each vertex to A to be infinity. Then, set the distance from the starting node to itself to 0, then use extractMin to get A out, then explore all its neighbors and update their distance from A. Do another extractMin and explore neighbors. Keep doing extractMin until all of the elements are in the heap.. You will have a map for V parent and one for V dist. 
+
+* When you use extractMin on A, A's parent will be null and A's distance will be 0. If you find a path that is shorter than current known distance, update distance. Extractmin again and for the new vertex, we will examine the connected nodes. If the node is not in the heap anymore, nothing happens. If it is, we update with the minimum distance from A(if A to E is 2 and E to F is 3, min is 5). Keep going until map heap is empty.
+
+* To find the path, you check the parent map and follow the parents from a point until you reach destination node.
+
+* Time complexity is O(Elog(V)) and space is O(V + E)
+
+* Given a graph and a source vertex in the graph, find the shortest path from source to all vertices in the given graph
+
+* We generate a shortest path tree with given source as the root. We maintain two sets, one set contains vertices included in the shortest path tree, the other set includes vertices not yet in the shortest path tree. At every step of the algorithm, we find a vertex which is in the other set (not included yet set) and has a minimum distance from the source.
+
+* Steps:
+1. Create a set sptSet(shortest path tree set) that keeps track of vertices included in shortest path tree, ie whose minimum distance from a source is calculated and finalized. Initially this set it empty.
+2. Assign a distance value to all vertices in the input graph. Initialize all distance values as infinite. Assign distance value 0 for the source vertex so that it's picked first.
+3. While sptSet doesn't include all vertices:
+    a. Pick a vertex u which is not yet in sptSet and has a minimum distance value
+    b. Include u in sptSet
+    c. Update distance value of all adjacent vertices of u. To update the distance values, iterate through all adjacent vertices. For every adjacent vertex v, if sum of distance value of u (from source) and weight of edge u-v, is less than the distance value of v, then update the distance value of v.
+
 # Week 2
 ## Recursion
 

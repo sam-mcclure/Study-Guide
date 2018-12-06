@@ -35,6 +35,12 @@ Uniform Interface (ensure that there is a common language between servers and cl
 6. Explain TCP, and why it is a necessary protocol
 - Transmission Control Protocol. In order to send data between computers, the data is broken into many packets that can travel different routes. This prevents the data from bottlenecking and ensures that it is always taking the most efficient route. TCP is a standard for breaking these packets down, figuring out how to assemble them, and checking to see if all of the needed packets arrived at the destination. It ensures that all data is received and allows us to send and retrieve data faster by breaking it into packets.
 
+7. What is a datagram?
+- While TCP sends data in packets, UDP sends data in datagrams. A datagram is a very small amount of data that provides a connectionless communication of data. The arrival time and order of arrival of datagrams is not guaranteed by the network.
+
+8. What are the benefits of UDP over TCP? What are the shortcomings?
+- UDP has smaller packet sizes, no connection to create and maintain, and more control over when data is sent. However, it is not reliable, some data may not arrive or arrive corrupted and it won't request new data. Packets may arrive out of order and there is no congestion control
+
 # Week 2
 
 ## HTTP

@@ -92,6 +92,48 @@ W1D5
 
 * The application layer has protocols like HTTP, the transport layer has TCP and UDP. After the application layer gets the data, it talks to the transport layer using ports. Once it gets the data, TCP breaks it into packets which can individually take the quickest route to the target computer. To make sure they can be put together correctly, TCP includes a header of instructions on how to assemble them and checks for any errors. The IP  (internet) layer checks the IP address. The last layer is something. 
 
+## UDP
+
+* The structure of a packet: there are 5 layers: Application(HTTP), Transport(UDP and TCP), Network(IP), Link(Ethernet or Wifi), Physical(coaxial Ethernet cable)
+
+* UDP and TCP are part of the transport layer
+
+* Purpose of the transport layer is to let multiple applications use one network connection simultaneously
+
+* UDP (User Datagram Protocol) is the light-weight connectionless choice
+
+* Advantages of UDP: smaller packet sizes, no connection to create and maintain, more control over when data is sent
+
+* Disadvantages of UDP: has a primitive form of error detection, but it is not that reliable. When it detects corruption, it will not try to fix it. No compensation for lost packets. Every packet only gets set once. Packets can arrive out of order. No congestion control. Not that reliable
+
+* TCP is the reliable, connection based choice
+
+* Since TCP is connection based, you have to set up a connection first (three-way handshake). Because there is a connection, this allows for features such as delivery acknowledgements, retransmission (will send packet again if no delivery acknowledgement), in-order delivery, congestion control(delays transmission when the network is congested), enforces error detection
+
+* Disadvantages of TCP: Require bigger headers, data doesn't always get sent out immeadiately(side effect of congestion control), has bigger overhead
+
+* UDP better for video streaming (don't care if some packets go missing)
+
+* UDP is message-oriented. Application sends data in distinct chunks
+
+* TCP is stream-oriented. Used as continouous flow of data split up in chunks by TCP.
+
+* For text conversation, TCP is better because it doesn't require much bandwith and the messages will ensure delivery and be in the right order.
+
+* TCP is also best when data loss can't be tolerated or in-order delivery is needed, such as file transfers and remote access. Or if you need delivery acknowledgements
+
+* For multimedia streaming, you can use UDP or TCP. UDP is preferred because there is less overhead, send delay is undesirable, and data loss can be masked. Some companies are using TCP when the overhead doesn't deteriorate performance or some firewalls block UDP for security reasons
+
+* UDP can also be used for small transactions, such as DNS lookups(no need to create and close the connection first) or bandwidth-intensive apps that can tolerate packet loss
+
+* TCP is used in the case of non-time critical applications and UDP is used for games or applications the require fast transmission of data.
+
+* TCP is a connection oriented stream over an IP network. It guarantees that all sent packets will reach the destination in the correct order. This implies the use of acknowledgement packets sent back to the sender, and automatic retransmission, causing additional delays and a general less efficient transmission than UDP.
+
+* UDP is a connection-less protocol. Communication is datagram oriented. The integrity is guaranteed only on the single datagram. Datagrams reach destination and can arrive out of order or don't arrive at all. It is more efficient than TCP because it uses non ACK. It's generally used for real time communication, where a little percentage of packet loss is preferable to the overhead of a TCP connection.
+
+* In certain situations, UDP is used because it allows broadcast packet transmission. This is sometimes fundamental in cases like DHCP protocol, because the client machine hasn't still received an IP address (this is the DHCP negotiation protocol purpose) and there won't be any way to establish a TCP stream without the IP address itself
+
 # Week 2
 
 ## HTTP Methods
