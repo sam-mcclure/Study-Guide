@@ -71,6 +71,17 @@
 
 * Using IIFE enables you to attach private data to a function, creates fresh environments, and avoids polluting the global namespace
 
+## == vs ===
+
+* == checks for eqaulity with coercion and === checks for equality without coercion - strict equality
+- 2 == '2' True, 2 === '2' False
+
+* If you are comparing a boolean with something other than a boolean, JavaScript coerces that boolean to a number and compares. This comparison is now between a number and a string. Javascript now coerces that string to a number and compares both numbers. 
+
+- false == "" true, false == [] true, false == {} false,
+"" == 0 true, "" == [] true, "" == {} false, 0 == [] true,
+0 == {} false, 0 == null false
+
 # Week 2
 
 ## Hoisting

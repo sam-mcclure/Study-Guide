@@ -56,6 +56,9 @@ function sandwichMaker(mainIngredient){
 15. What is the syntax for an IIFE?
 - (function () {statements})();
 
+16. What is the risk we face when using == vs ===?
+- === checks for strict equality, or equality without conversion, meaning it checks the exact values against each other. == checks for equality with coersion, meaning that it will convert the two values to be of the same type and then compare them. If using ==, you might get false positives because strings and booleans might be converted to numbers or something before being compared.
+
 # Week 2
 
 ## Hoisting
