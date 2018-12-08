@@ -59,6 +59,18 @@ function sandwichMaker(mainIngredient){
 16. What is the risk we face when using == vs ===?
 - === checks for strict equality, or equality without conversion, meaning it checks the exact values against each other. == checks for equality with coersion, meaning that it will convert the two values to be of the same type and then compare them. If using ==, you might get false positives because strings and booleans might be converted to numbers or something before being compared.
 
+17. When is the value of this evaluated?
+- Run-time. When a function is declared, it may use 'this', but that 'this' will have no value until the function is called.
+
+18. How does use strict affect the value of this?
+- In 'use strict' mode, if you try to use the function without an object, 'this' will be undefined and will throw an error.
+
+19.  Without use strict, what is the value of this inside a named or anonymous function?
+- Without use strict, the value of 'this' will be the global object (the window in a browser)
+
+20. What is the value of this in method style syntax?
+- The object before the dot (ie obj.method() this is obj)
+
 # Week 2
 
 ## Hoisting

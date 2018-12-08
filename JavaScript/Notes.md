@@ -82,6 +82,59 @@
 "" == 0 true, "" == [] true, "" == {} false, 0 == [] true,
 0 == {} false, 0 == null false
 
+## this
+
+* Functions that are stored in object properties are called 'methods'
+
+* Methods allow objects to 'act' like object.doSomething()
+
+* Methods can reference the object as 'this'
+
+* The value of 'this' is defined at run-time
+
+* When a function is declared, it may use 'this', but that 'this' have no value until the function is called
+
+* That function can be copied between objects
+
+* When a function is called in the 'method' syntax object.method(), the value of 'this' during the call is 'object'
+
+* Arrow functions are special: they have no 'this'. When 'this' is accessed inside an arrow function, it is taken from outside.
+
+* Objects are usually created to represent entitites of the real world, like users and so on. Actions are represented in JavaScript by functions in properties
+
+* A function that is the property of an object (defined on the object like user.sayHi = function) is called its method
+
+* There exists a shorter syntax for methods in an object literal:
+```JS
+let user = {
+    sayHi () { //same as user.sayHi
+        alert("Hello");
+    }
+}
+```
+
+* This shorter syntax is usually preferred
+
+* It's common that an object method needs to access the information stored in the object to do its job. To access the object, a method can use the 'this' keyword. The value of 'this' is the object 'before dot', the one used to call the method. 
+
+* In JavaScript, 'this' keyword behaves unlike most other programming languages. First, it can be used in any function. The value of 'this' is evaluated during run-time and it can be anything
+
+* If you try to use the function without an object, 'this' will be undefined in strict mode. If you try to access this.name, there will be an error. In non-strict mode (if you forget 'use strict') the value of 'this' in such case will be the global object (window). This is a historical behavior that 'use strict' fixes.
+
+* Usually a call of a function that uses 'this' without an object is not normal, but rather a programming mistake. If a function has 'this', then it is usually meant to be called in the context of an object
+
+* In JavaScript, 'this' is free, its value is evaluated at call-time and does not depend on where the method was declared, but rather on what's the object before the dot. On one hand, the function can be reused for different objects. On the other, greater flexibility opens the door for mistakes. 
+
+* First, the dot retrieves the property obj.method. Then, parentheses () execute it. If we put these operations on separate lines, 'this' will be lost
+
+* To make user.hi() calls work, JavaScript uses a trick - the dot returns not a function, but a value of the special Reference Type. The Reference Type is a 'specification' type. We can't explicitly use it, but it is used internally by the language.
+
+* The value of Reference Type is a three-value combination (base, name, strict) where base is the object, name is the property, and strict is true is use strict is in effect. When parentheses are called on the Reference Type, they receive the full information about the object and its method, and can set the right 'this'. Any other assignment discards the Reference Type.
+
+* 'this' is only passed the right way if the function is called directly using a dot obj.method() or square brackets obj['method']()
+
+* Arrow functions are special, they don't have their own 'this'. If we reference 'this' from such a function, it's taken from the outer 'normal' function.
+
 # Week 2
 
 ## Hoisting

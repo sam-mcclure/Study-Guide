@@ -93,6 +93,18 @@ W1D4
 - Most common use: Cleaning up any leftover debris from your component
 - Can not call setState
 
+* React is designed around the concept of reusable components. You define small components and you put them together to form bigger components. All components, big or small, are reusable, even accross different projects. A React component - in its simplest form - is a plain-old JavaScript function
+
+* React Component names should start with a capital letter, every component recieves a list of attributes called props, and they use JSX (similar to HTML, but not HTML)
+
+* Inside JSX, you can use any JavaScript expression within a pair of curly braces. JSX only allows expresssions (ternary okay, but not if statements)
+
+* You can write React components with JavaScript classes (class Button extends React.Component)
+
+* All React element attributes (events included) are names using camelCase, rather than lowercase. (onClick rather than onclick)
+
+* We pass an actual JavaScript function reference as the event handler, rather than a string. (onClick={handleClick} not onClick="handleClick)
+
 # Week 2
 
 ## Redux
