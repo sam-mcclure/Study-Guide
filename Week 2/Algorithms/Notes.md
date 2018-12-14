@@ -22,3 +22,17 @@
 * Dynamic Programming is mainly an optimization over plain recursion. Wherever we see a recursive solution that has repeated calls for same inputs, we can optimze it using dynamic programming. The idea is to simply store the results of subproblems, so that we do not have to re-compute them when needed later
 
 * This simple optimization reduces time complexitites from exponential to ploynomial
+
+* Do not solve the same problem multiple times, just recall it from memory
+
+* Steps to solve a Dynamic Programming problem:
+1. Identify if it is a DP problem
+2. Decide a state expression with least parameters
+3. Formulate state relationship
+4. Do tabulation (or add memoization)
+
+* Typically, all the problems that require you to maximize or minimize a certain quantity or counting problems that say to count the arrangements under certain conditions or certain probability problems can be solved by using Dynamic Programming
+
+* All dynamic programming problems satisfy the overlapping subproblems property and most of the classic dynamic problesm also satisfy the optimal sub-structure property
+
+* Overlapping Subproblems: You need to use the result of the same problem multiple times
