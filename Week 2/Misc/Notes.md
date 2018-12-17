@@ -100,3 +100,36 @@ const store = createStore(reducer);
 
 * Finally, we subscribe to the Redux Store, so out render function runs anytime the state changes, so the counter gets the current state
 
+W2D3
+
+* You want to freeze the arrays because you never want to mutate the state directly. Can use deepFreeze method of expect library
+
+* Using concat, slice, or the spread operator will not modify the original array
+
+* You also never want to modify the redux state directly. Object.freeze the oldState
+
+* Use Object.assign to copy the object with the new assignments
+
+* Mutations are not allowed in Redux 
+
+* Object.assign lets you assign properties of several objects onto the target object. ie (Object.assign({}, oldState, {completed: !todo.completed}));
+
+* The left argument is the one whose properties are going to be assigned, so it's going to be mutated. This is why we're passing an empty object as the first argument, so we don't mutate any existing data. Every further argument to Object.assign will be considered one of the source objects whose properties will be copied on to the target object
+
+* It is important that if several sources specify different values for the same property, the last one wins. This is what we use to override the completed field despite what the original object says
+
+* Object.assign is a new method in ES6, so it is not natively available in all the browsers. You should use a polyfill, either the one that ships withBabel or a standalone Object.assign polyfill, to use it without risking crashing your website
+
+* Another option that doesn't require a polyfill is to use the new object spread operator, which is not part of ES6. However, it is proposed for ES7
+
+```JS
+const toggleTodo = (todo) => {
+    return {
+        ...todo,
+        completed: !todo.completed
+    };
+}
+```
+
+* A reducer is a pure function that you write to implement the update logic of your application -- that is, how the next state is calculated given the current state and the action being dispatched.
+

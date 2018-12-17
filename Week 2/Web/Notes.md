@@ -64,3 +64,54 @@
 * 5xx Server Error - Indicate cases in which the server is aware that it has erred or is incapable of performing the request. The server should include an entity containing an explanation of the error situation and whether it is a temporary or permanent condition. The server failed to fulfill an apparently valid request
 
 * 500 Internal Server Error - The server encountered an unexpected condition which prevented it from fulfilling the request. A generic error message, given when no more specific message is suitable.
+
+## HTTP vs HTTPS
+
+* Asymmetric key cryptography - even if you can encrypt a message, you can't decrypt it. The box it's put into is called the public key and the key to open it is the private key 
+
+* Certification Authority - a signature from a trusted source on a trusted source
+
+* HTTPS is a more secure version of HTTP. The computers send a code between them and then they scramble the messages using that code so that no one in between can read them. This keeps info safe from hackers. They use the code on a Secure Sockets Layer (SSL) to send the info back and forth
+
+* HTTPS is the procedure for encrypting information and then exchanging it (HyperText Transfer Protocol Secure)
+
+* Benfits of HTTPS:
+    - Customer information, like credit card numbers, is encrypted and cannot be intercepted
+    - Visitors can verify you are a registered business and you own the domain
+    - Customers are more likely to trust and complete purchases from sites that use HTTPS
+
+## GET vs POST
+
+* GET is used to request data from a specified resource. It is one of the most common HTTP methods. The query string (name/value pairs) is sent in the URL of a GET request
+- Can be cached
+- Remain in the browser history
+- Can be bookmarked
+- Should never be used when dealing with sensitive data
+- Have length restrictions
+- Only used to request data (not modify)
+
+* POST is used to send data to a server to create/update a response. The data sent the the server with POST is stored in the request body of the HTTP request. One of the most common HTTP methods
+- Never cached
+- Do not remain in the browser history
+- Have no restrictions on data length
+
+* PUT is used to send data to a server to create/update a resource. The difference between POST and PUT is that PUT requests are idempotent. That is, calling the same PUT request multiple times will always produce the same result. In contrast, calling a POST request repeatedly will create the same resource multiple times
+
+* HEAD is almost identical to GET, but without a response body. In other words, if GET /users returns a list of users, then HEAD /users will make the sam request but will not return the list of users. They're useful for checking what a GET request will return before actually making a GET request - like before downloading a large file or response body
+
+* The DELETE method deletes the specified resource
+
+* The OPTIONS method describes the communication options for the target resource
+
+* For GET: back button/reload is harmless, can be bookmarked, can be cached, uses application/x-www-form-urlencoded, parameters remain in browser history, there are restrictions on data length (when sending data, the GET method adds the data to the URL and the length of a URL is limited to 2048 characters), only ASCII characters are allowed, GET is less secure than POST because the data sent is part of the URL (never use GET when sending passwords or other sensitive info!),
+and the data is visible to everyone in the URL
+
+* For Post: hitting the back button/reload will resubmit the data (browser should alert the user), cannot be bookmarked, not cached, uses application/x-www-form-urlencoded or multipart/form-data (for binary data), parameters are not saved in browser history, no restrictions on data length, no restrictions on data type, POST is a little safer than GET because the parameters are not stored in browser history or web server logs, and data id not displayed in the URL
+
+## PUT vs PATCH
+
+* The PUT method requests that the enclosed entity be stored under the supplied Request-URI. If the Request-URI refers to an already existing resource, the enclosed entity SHOULD be considered as a modified version of the one residing on the origin server. If the request-URI does not point to an existing resource, and that URI is capable of being defined as a new resource by the requesting user agent, the origin server can create the resource with that URI
+
+* The PATCH method requests that a set of changes described in the request entity be applied to the resource identified by the Request-URI
+
+* PUT might be used to replace the entire entity (instead of a set of attributes as with PATCH)

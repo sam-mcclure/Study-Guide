@@ -19,3 +19,14 @@
 4. What type of function is invoked with the new keyword? What does this function return?
 - Functions invoked using the new keyword are called constuctor functions. It returns a new object with a prototype set to the prototype of the constuctor function and any properties defined on the contructor function.
 
+ ## Event Bubbling
+
+ 5. How can you stop event bubbling?
+ - By using event.stopPropagation(). This will stop the movement upwards, but all event handlers on the current element will still run. It is not advised to stop event bubbling unless you have a very good reason to, as you may need this behavior later for different reasons.
+
+ 6. What is the difference between event.target and event.currentTarget?
+ - event.target is the most deeply nested argument that caused the event and doesn't change while event.currentTarget is the element that has the currently running handler on it. These could be the same element
+
+ 7. What does stopImmediatePropagation do?
+ - It stops bubbling from going upwards and prevents handlers on the current element from executing
+

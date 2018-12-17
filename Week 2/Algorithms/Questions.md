@@ -19,3 +19,11 @@
 
 6. How is memory allocated during recursive function calls?
 - When any function is called, the memory is allocated to in on the stack. The memory for each successive call of a recursive function is added to the top of the stack. When the base case is reached, the function returns its value to the function that called it and memory is decallocated until the stack is empty and the function is finished
+
+## Dynamic Programming
+
+7. What is the difference between Memoization and Tabulation?
+- Memoization is top down, you create an empty table at the start and set up the function so that it's broken into small recursive steps. At each step, you either grab the value from the table or calculate the value and then store it in the table. Tabulation is bottom up, you calculate every possible value of i and create a table, returning table[n] in the end. Memoization is generally easier to write and can be more efficient if you don't need to solve every subproblem to get the answer, but it can overall be slower because of many recursive calls. Tabulation can be harder to write, but if you have to calculate all the answers to every subproblem, it's more efficient because it doesn't rely on recursion
+
+8. Why is memoization helpful?
+- If you need to use the answer to a subproblem multiple times, like when solving a fibonacci sequence, memoization allows you to store the answers to the subproblems every time you calculate them, so the next time you need to use it, you can look it up in the table rather than calculating it again. This makes the function run much quicker.

@@ -26,3 +26,6 @@
 
 3. What are the types of status codes?
 - 1xx - Informational, 2xx - Success, 3xx Redirection, 4xx - Client Error, 5xx - Server Error
+
+4. What is the difference between HTTP and HTTPS?
+- HTTP does not use any kind of encryption, so it is not secure and is open to hacking. HTTPS adds encryption to the connection, protecting sensitive information.
