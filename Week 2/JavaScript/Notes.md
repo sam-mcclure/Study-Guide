@@ -78,3 +78,33 @@
 * The capturing phase is used very rarely, usually we handle events on bubbling. 
 
 * Bubbling and capturing lay the foundation for 'event delegation', an extremely powerful event handling pattern
+
+## Event Delegation
+
+* Capturing and bubbling allow us to implement one of the most powerful event handling patterns called event delegation.
+
+* The idea is that if we have a lot of elements handled in a similar way, then instead of assigning a handler to each of them, we put a single handler on their common ancestor. In the handeler, we get event.target, see where the event actually happened, and handle it
+
+* We can also use event delegation to add 'behaviors' to elements declaratively, with special attributes and classes. 
+
+* The pattern has two parts:
+1. We add a special attribute to an element
+2. A document-wide handler tracks events, and if an event happens on an attributed element - performs an action
+
+* When we assign an event handler to the document object, we should always use addEventListener, not document.onClick because the latter will cause conflicts: new handlers overwrite old ones
+
+* Event delegation if often used to add the same handlers for many similar elements.
+
+* The algorithm:
+1. Put a single handler on the container
+2. In the handler - check the source element event.target
+3. If the event happened inside and element that interests us, then handle that event
+
+* Benefits:
+- Simplifies initalization and saves memory: no need to add many handlers
+- Less code: when adding or removing elements, no need to add/remove handlers
+- DOM modifications: we can mass add/remove elements with innerHTML and alike
+
+* The delegation does have limitations:
+- First, the event must be bubbling. Some events do not bubble. Also, low-level handlers should not use event.stopPropagation()
+- Second, the delegation may add CPU load, because the container-level handler reacts on events in any place of the container, no matter if they interest us or not. But usually, the load is negligible, so we don't take that into account

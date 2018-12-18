@@ -29,3 +29,14 @@
 
 4. What is the difference between HTTP and HTTPS?
 - HTTP does not use any kind of encryption, so it is not secure and is open to hacking. HTTPS adds encryption to the connection, protecting sensitive information.
+
+## localStorage/sessionStorage/cookies
+
+5. What is the difference between localStorage and sessionStorage?
+- They are very similar, except for pesistence. sessionStorage is only available for the duration of the browser session and is deleted when the tab or window is closed. localStorage will presist until cleared by the user
+
+6. Why is it important that users cannot modify their cookies?
+- Cookies are typically used for user authentication and anyone with that cookie could become that user. Cookies have some built in. If a user could modify the cookie, it would be easy for them to attack the site with Script injection or login as other users
+
+7. When are cookies sent to the server?
+- Every time an HTTP request is sent

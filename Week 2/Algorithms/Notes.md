@@ -72,3 +72,16 @@
 * Memoization uses multiple recursive function calls while tabulation only uses a single function call
 
 * Tabulation works in a bottom up fashion and avoids multiple lookups, this saving function call overhead time. Memoization works in top down fasion, sometimes avoids computing solutions to subproblems that aren't needed, and sometimes is more intuitive to write
+
+W2D4
+
+* A given problem is said to have the Optimal Substructure property if an optimal solution of the given problem can be obtained by using optimal solutions of its subproblems
+
+* Dynamic Programming Techniques exploit this property to split the problems into smaller subproblems and solve them instead
+
+* This is useful because after the subproblems becom sufficiently small, solving them becomes trivial. These trivial solutions can then be used to solve the super-problems and arrive at the final result
+
+* The shortest path problem has the following optimal substructure property:
+    - If a node x lies in the shortest path from source node u to destination node v, then the shortest path from u to v is the combination of the shortest path from u to x and the shortest path from x to v
+
+* The longest path problem doesn't have the optimal substructure property. The optimal solution to the main problem can not be obtained using optimal solutions to subproblems

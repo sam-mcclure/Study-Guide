@@ -133,3 +133,20 @@ const toggleTodo = (todo) => {
 
 * A reducer is a pure function that you write to implement the update logic of your application -- that is, how the next state is calculated given the current state and the action being dispatched.
 
+W2D4
+
+* Any time a function does too many things, you want to extract other functions from it and call them so that every function only addresses a single concern
+
+* Reducer Composition - Different reducers specify how different parts of the state tree are updated in response to actions. Reducers are also normal JavaScript functions, so they can call other reducers to delegate and abstract a way of handling of updates of some parts of this tree they manage
+
+* This pattern can be applied many times, and while there is still a single top level reducer managing the state of your app, you will fidnd it convenient to express it as many reducers that call on each other, each contribution to a part of the applications state tree
+
+* Redux provides a function called combineReducers that lets you avoid writing this code by hand. Instead, it generates the top level reducer for you.
+
+* The only argument to combineReducers is an objects. This object lets you specify the mapping between the state field names and the reducers managing them. 
+
+* The return value of combineReducer is called a Reducer function, which is pretty much equivalent to the reducer function written previously by hand.
+
+* Always name reducers after the state keys they manage. Since the key names and the value names are now the same, you can omit the values thanks to ES6 object literal shorthand notation
+
+* The combineReducers function comes with Redux and generates one reducer from several other reducers, delegating to them paths of the same tree

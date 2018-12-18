@@ -30,3 +30,6 @@
  7. What does stopImmediatePropagation do?
  - It stops bubbling from going upwards and prevents handlers on the current element from executing
 
+ 8. What is event delegation?
+ - Event delegation is the idea that if you have a lot of elements handled in a similar way, instead of assigning a handler to each of them, you put a single handler on their common ancestor. In the handler, you get event.target, check if the target is something you want to act on, then handle it. This way, if you wanted to do the same thing for many similar elements, you can put the event listener on their common ancestor rather than on each element
+

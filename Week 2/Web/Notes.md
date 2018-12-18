@@ -115,3 +115,39 @@ and the data is visible to everyone in the URL
 * The PATCH method requests that a set of changes described in the request entity be applied to the resource identified by the Request-URI
 
 * PUT might be used to replace the entire entity (instead of a set of attributes as with PATCH)
+
+## localStorage vs sesionStorage vs cookies 
+
+* localStorage, sessionStorage, and cookies are all client storage solutions. Session data is held on the server where it remains under your direct control
+
+* localStorage and sessionStorage are relatively new APIs (not all legacy browsers support them) and are near identical (both in APIs and capabilities) with the sole exception of persistence. 
+
+* sessionStorage is only available for the duration of the browser session and is deleted when the tab or window is closed, though it does survive page reloads.
+
+* If the data you are storing needs to be available on an ongoing basis, then localStorage is preferrable to sessionStorage - though both can be cleared by the user, so you should not rely on the continuing existance of data in either case. 
+
+* localStorage and sessionStorage are perfect for persisting non-sensitive data needed within client scripts between pages (ie preferences, scores in games). 
+
+* The data stored in localStorage and sessionStorage can easily be read or changed from within the client/browser, so should not be relied upon for storage of sensitive or security-related data within applications
+
+* Cookies can also be trivially tampered with by the user and data can be read from them in plain text. 
+
+* If you want to store sensitive data, then the session is your only option. If you're not using SSL, cookie information can also be intercepted in transit.
+
+* Cookies can have a degree of protection applied from security risks such as Cross-site Scriptin(XSS)/Script injection by setting an HTTP only flag which means modern browsers will prevent access to the cookies and values from JavaScript.
+
+* As cookies are used for authentication purposes and persistence of user data, all cookies valid for a page are sent from the browser to the sever for every request to the same domain. For this reason, cookies should not be used to store large amounts of information.
+
+* Typically cookies are used to store identifying tokens for authentication, session, and advertising tracking.
+
+* In terms of capabilities, cookies, sessionStorage, and localStorage only allow you to store string - it is possible to implicitly convert primitive values when setting but not Objects or arrays. Session storage will generally allow you to store any primitives or objects supported by your Server Side language/framework
+
+* As HTTp is a stateless protocol, web applications have no way of identifiying a user from previous visits on returning to the website, so session data usually relies on a cookie token to identify the user for repeat visits.
+
+* As session data is completely controlled by your application (server side), it is the best place for anything sensitive or secure in nature.
+
+* The obvious disadvantage of server-side data is scalability - server resources are required for each user for the duration of the session, and that any data needed client side must be sent with each request. Session data must expire after a given time to avoid all server resources being taken up by abandoned sessions.
+
+* When using session data, you should, therefore, be aware of the possibility that data will have expired and been lost, especially on pages with long forms. 
+
+* localStorage, sessionStorage, and cookies are all subject to 'same-origin' rules, which means browsers should prevent access to the data except the domain that set the information to start with

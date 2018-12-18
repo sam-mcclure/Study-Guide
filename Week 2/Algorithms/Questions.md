@@ -27,3 +27,6 @@
 
 8. Why is memoization helpful?
 - If you need to use the answer to a subproblem multiple times, like when solving a fibonacci sequence, memoization allows you to store the answers to the subproblems every time you calculate them, so the next time you need to use it, you can look it up in the table rather than calculating it again. This makes the function run much quicker.
+
+9. What is an optimal substructure? When might a problem have one?
+- Optimal substructure occurs when the solution to the given problem can be obtained using optimal solutions of its subproblems. This is used for dynamic program problems, such as finding the shortest path between nodes. If a node x lies in the shortest path from source node u to destination node v, then the shortest path from u to v is the combination of the shortest path from u to x and the shortest path from x to v
