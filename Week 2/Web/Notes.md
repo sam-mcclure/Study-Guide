@@ -151,3 +151,32 @@ and the data is visible to everyone in the URL
 * When using session data, you should, therefore, be aware of the possibility that data will have expired and been lost, especially on pages with long forms. 
 
 * localStorage, sessionStorage, and cookies are all subject to 'same-origin' rules, which means browsers should prevent access to the data except the domain that set the information to start with
+
+## XSS Attack
+
+* Cross-site Scripting (XSS) refers to client-side code injection attacks wherein an attacker can execute malicious scripts (also commonly referred to as a malicious payload) into a legitimate website or web application
+
+* XSS is amongst the most rampant of web application vulnerabilities and occurs when a web application makes use of unvalidated or unencoded user input within the output it generates
+
+* An attacker would exploit a vulnerability within a website or web application that the victim would visit, essentially using the vulnerable website as a vehicle to deliver a malicious script to the victim's browser
+
+* While XSS can be taken advantage of within VBScript, ActiveX, and Flash, the most widely abused is JavaScript - primarily because JavaScript is fundamental to most browsing experiences
+
+* In order for an XSS attack to take place, the vunerable website needs to directly include user input in its pages. An attacker can insert a string that will be used within the web page and is treated as code by the victim's browser
+
+* An XSS vulnerability can only exist if the payload (malicious script) that the attack inserts ultimately gets parsed in the victim's browser
+
+* Malicious JavaScript has access to all the same objects the rest of the web page has, including access to cookies. Cookies are often used to store session tokens, if an attacker can obtain a user's session cookie, they can impersonate that user
+
+* JavaScript can read and make arbitrary modifications to the browser's DOM (within the page that JavaScript is running)
+
+* JavaScript can use XMLHttpRequest to send HTTP requests with arbitrary content to arbitrary destinations
+
+* JavaScript in modern browsers can leverage HTML5 APIs, such as accessing a user's geolocation, webcam, microphone, and even the specific files from the user's file system. While most of these APIs require user opt-in, XSS in conjuction with some clever social engineering can bring an attacker a long way.
+
+* Hackers can pull off cookie theft, keylogging, phising, and identity theft 
+
+* The XSS attack needs three actors - the website, the victim, and the attacker.
+
+* The <script/> tag is the most straight-forward XSS payload. A script tag can either reference external JavaScript code or embed the code within the script tag.
+

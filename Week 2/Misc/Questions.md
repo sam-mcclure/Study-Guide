@@ -17,3 +17,6 @@
 
 6. What does the subscribe method do in Redux?
 - The subscribe method lets you register a callback that the redux store will call any time an action has been dispatched, so that you can update the UI of your application. It will reflect the current application state
+
+7. What are presentational components?
+- React components that don't specify any behaviors or have internal state and are only concerned with how things look or how they render

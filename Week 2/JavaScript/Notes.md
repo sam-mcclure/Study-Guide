@@ -108,3 +108,37 @@
 * The delegation does have limitations:
 - First, the event must be bubbling. Some events do not bubble. Also, low-level handlers should not use event.stopPropagation()
 - Second, the delegation may add CPU load, because the container-level handler reacts on events in any place of the container, no matter if they interest us or not. But usually, the load is negligible, so we don't take that into account
+
+## ES5 vs ES6
+
+* ECMAScript 6 (ES6) features can be divided into features that are pure syntactic sugar (like class), features that enhance JavaScript (like import), and features that fix some of JavaScript's bad parts (like the let keyword).
+
+* Block Scope - ES5 only had function-level scope (you wrap code in functions to create scope) and caused a lot of issues. ES6 provides 'block'-level scoping (ie curly-braces to scope) when we use 'let' or 'const' instead of 'var'
+
+* Some benefits of block scope:
+- Prevent variable hoisting outside of scope ('let' and 'const' do not hoist)
+
+- Prevent duplicate variable declaration (ES6 doesn't allow duplicate declaration of variables when we declare them using 'let' or 'const in the same scope. This is helpful to avoid duplicate function expressions coming from different libraries)
+
+- Eliminates the need for IIFE (In ES5, we had to use IIFE to ensure we don't pollute or overwrite the global scope. In ES6, we can just use curly braces and use const or let to get the same effect)
+
+- babel - A Tool to convert ES6 to ES5 (You ultimately need to run ES6 in a regular browser. Babel is the most popular tool used to convert ES6 to ES5)
+
+- Makes it trivial to use functions in loops (In ES5, if you had a function inside a loop, if that function tried to access the looping variable 'i', i would get hoisted as a global variable. In ES6, you
+ can use 'let' and use functions without any issue)
+
+ * Lexical 'this' (via arrow functions) - In ES5, 'this' can vary based on where it is called and even how it is called and can cause problems. ES6 eliminates this major issue by using a lexical this.
+
+ * Lexical 'this' is a feature that forces the variable 'this' to always point to the object where it is physically located within. You get lexical this automatically by using the fat-arrow function => 
+
+ * Dealing with 'arguments' - In ES5, 'arguments' acts like an array (ie you can loop over it), but it's not an array so functions like sort and slice etc are not available. 
+ 
+ * In ES6, you can use a new feature called 'Rest' parameters. It's represented with 3 dots and a name, like ...args. Rest parameteres is an array, so we can use all array functions.
+
+ * Classes - there is no such thing as a 'class' in JS like it is in other OO langauges. But people have treated the function constructors that create objects when you use the 'new' keyword as classes.
+
+ * Since JS doesn't support the classes and just simulates it via prototypes, it's syntax has been confusing for JS developers who want to use it in a traditional OO fashion. This is especially true for things like creating subclasses, calling functions in parent classes and so on
+
+ * ES6 brings a new syntax that's common in various programming languages and amkes the whole thing simple. It allows a class keyword that looks and functions more similarly to OO languages
+
+ * Strict mode - 'use strict' helps identify common issues and also helps with securing JavaScript. In ES5, the strict mode is optional, but in ES6, it's needed for many ES6 features, so most people and tools like babel automatically add 'use strict' at the top of the file, putting the whole JS code in strict mode and forcing us to write better JavaScript

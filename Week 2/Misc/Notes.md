@@ -150,3 +150,11 @@ W2D4
 * Always name reducers after the state keys they manage. Since the key names and the value names are now the same, you can omit the values thanks to ES6 object literal shorthand notation
 
 * The combineReducers function comes with Redux and generates one reducer from several other reducers, delegating to them paths of the same tree
+
+W2D5
+
+* Any state change is caused by a store.dispatch call somewhere in the component. When an action is dispatched, this store calls the reducer it was created with, with the current state and the action being dispatched.
+
+* Presentational components are React components that don't specify any behaviors or have internal state, they are only concerned with how things look or how they render
+
+* Presentational components will need container components to actually pass the data from the store and to specify the behavior

@@ -33,3 +33,10 @@
  8. What is event delegation?
  - Event delegation is the idea that if you have a lot of elements handled in a similar way, instead of assigning a handler to each of them, you put a single handler on their common ancestor. In the handler, you get event.target, check if the target is something you want to act on, then handle it. This way, if you wanted to do the same thing for many similar elements, you can put the event listener on their common ancestor rather than on each element
 
+## ES5 vs ES6 
+
+9. Discuss 4 differences between ES5 and ES6 that you find important
+- 1. ES6 allows block scoping, meaning a new scope will be defined for every set of curly braces. This prevents us from polluting the global scope and allows for easier function writing
+2. 'let' and 'const' are used in ES6 instead of 'var' from ES5. These new keywords are not hoisted and prevent duplicate variable declaration
+3. Lexical 'this' using arrow functions. When using arrow functions in ES6, you can force 'this' to point to th object it is physically located in (instead of the global scope)
+4. Class structure allows JavaScript to be written more similarly to OO languages

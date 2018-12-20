@@ -40,3 +40,8 @@
 
 7. When are cookies sent to the server?
 - Every time an HTTP request is sent
+
+## XSS
+
+8. What is the danger of an XSS?
+- If a web application uses unvalidated or unencoded user input in the output it generates, a hacker can use Cross-site  Scripting to input malicious code into a form that will attack a user's browser when they navigate to that page. These scripts have access to anything JavaScript has access to and can be used for cookie theft, keylogging, phising, and identity theft.
