@@ -180,3 +180,41 @@ and the data is visible to everyone in the URL
 
 * The <script/> tag is the most straight-forward XSS payload. A script tag can either reference external JavaScript code or embed the code within the script tag.
 
+## CSRF
+
+* Cross-Site Request Forgery (CSRF) is a common attack that is regularly exploited.
+
+* CSRF only allows for state changes to occur and therefore cannot cater attacks that require the attacker to receive the contents of the HTTP response
+
+* CSRF is an attack whereby a malicious entity tricks a victim into performing actions on behalf of the attacker. The impact of the attack would depend on the level of permissions that the victim being exploited has. The actions being perpetrated by the attacker will have greater effect if the victim performing the actions is at an administrator level. 
+
+* CSRF attacks take advantage of the fact that a web application completely trusts a user, once it can confirm that the user is indeed who they say they are.
+
+* There are two main parts to executing a CSRF attack:
+- First, the victim must be tricked into clicking a link or loading a page. This is usually done through social engineering, which works exceptionally well into leveraging a victim's curiosity to click on malicious links
+- The second is to send a crafted request in the victim's browser that will send a legitimate looking request to the web application. The request will be sent with the values the attacker wants, including any cookies that the victim has. This way, the web application knows that the victim can perform certain actions and will consider the request legitimate
+
+* A CSRF attack simply takes advantage of the fact that the browser sends the cookie to the web application automatically with each and every request
+
+* CSRF will only be effective if a victim is authenticated, meaning the victim needs to be logged in. 
+
+* Protecting against CSRF attacks:
+- Anti-CSRF tokens - the most popular way to prevent CSRF attacks is to make use of a challenge token that is associated with a particular user and can be found as a hidden value in every state changing form present in the application (CSRF Token)
+
+- This protects the form against CSRF attacks because an attack crafting a request will also need to guess the anti-CSRF token for them to successfully trick a victim into sending a valid request. This token should be invalidated after some time and after a user logs out. 
+
+- For the anti-CSRF mechinism to be implemented properly, it will also need to be cryptographically secure, so that the toke itself cannot be easily guessed.
+
+- A lot of frameworks have anti-CSRF built into them.
+
+- Same-site cookies: CSRF attacks are only possible because cookies are sent with every request. Due to the nature of a CSRF attack, a flag can be set against a cookie, turning it into a same-site cookie.
+
+- A same-site cookie is a cookie which can only be sent if the request is being made from the same origin that is related to the cookie being sent. The cookie and the page from where the request is being made have the same origin if the protocol, port, and host is the same for both. 
+
+- Not all modern browsers support same-site cookies and older browsers do not support them. Currently, they are better suited as an additional defense while also using other CSRF protection
+
+- Cookies are intrinsically vulnerable as they are automatically sent with each request, allowing attackers to easily craft malicious requests leading to CSRF. Although the attacker can't obtain the response body or the cookie itself, they can perform actions with the victim's elevated rights. 
+
+- The impact of a CSRF vulnerability is also related to the privilege of the victim, whose cookie is being sent with the attacker's request. While data retrieval is not the main scope of a CSRF attack, state changes will surely have an adverse effect on the web application being exploited
+
+* CSRF attacks can lead to unauthorized fund transfers, changed passwords, and data theft

@@ -40,3 +40,11 @@
 2. 'let' and 'const' are used in ES6 instead of 'var' from ES5. These new keywords are not hoisted and prevent duplicate variable declaration
 3. Lexical 'this' using arrow functions. When using arrow functions in ES6, you can force 'this' to point to th object it is physically located in (instead of the global scope)
 4. Class structure allows JavaScript to be written more similarly to OO languages
+
+## Error Handling
+
+10. What are the steps of a try..catch block in Javascript?
+- First, the code in the try block is executed. If there were no errors, the catch block is skipped. If an error occurs, the try execution is stopped and the catch block is run. It will execute actions for errors that it recognizes and rethrow all other errors. If a finally block is executed, it is always run, either after the try block is finished or the catch block is.
+
+11. What type of errors to try..catch blocks work for?
+- try..catch blocks only work for RuntimeErrors

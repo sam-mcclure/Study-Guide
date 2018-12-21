@@ -45,3 +45,11 @@
 
 8. What is the danger of an XSS?
 - If a web application uses unvalidated or unencoded user input in the output it generates, a hacker can use Cross-site  Scripting to input malicious code into a form that will attack a user's browser when they navigate to that page. These scripts have access to anything JavaScript has access to and can be used for cookie theft, keylogging, phising, and identity theft.
+
+## CSRF
+
+9. What is a CSRF Attack?
+- A CSRF attack is when an attacker tricks a user into clicking on a link or loading a page that then sends a malicious request to a website that the user is logged in to, using the victim's cookies to make it seem like a legitimate request. CSRF can be used to transfer money, change passwords, and steal data.
+
+10. How can you prevent CSRF Vulnerabilities?
+- The most common way to prevent CSRF attacks is to send a hidden anti-CSRF token with a submitted form. This token should be hard to guess and requests will only be accepted with the correct token. Another way to prevent CSRF is to use a same-site cookie, meaning a cookie that came from the same source as the cookie is being sent to. However, this is not supported in all browsers, so shouldn't be used except as an extra layer of defense

@@ -142,3 +142,88 @@
  * ES6 brings a new syntax that's common in various programming languages and amkes the whole thing simple. It allows a class keyword that looks and functions more similarly to OO languages
 
  * Strict mode - 'use strict' helps identify common issues and also helps with securing JavaScript. In ES5, the strict mode is optional, but in ES6, it's needed for many ES6 features, so most people and tools like babel automatically add 'use strict' at the top of the file, putting the whole JS code in strict mode and forcing us to write better JavaScript
+
+ ## Error Handling
+
+ * Sometimes scripts have errors. They may occur because of programmer mistakes, unexpected user input, an erroneous server response, or thousands of other reasons.
+
+ * Usually, a script immeadiately stops in case of an error, printing it to the console
+
+ * 'try..catch' allows us to 'catch' errors and, instead of stopping the script, do something more reasonable
+
+ * The 'try..catch' construct has two main blocks: 'try', then 'catch':
+
+ ```JS
+ try{
+     // code
+ } catch (err) {
+     // error handling
+ }
+ ```
+
+ * First, the code in 'try {...}' is executed. If there were no errors, then 'catch(err)' is ignored: the execution reaches the end of try and then jumps over catch. If an error occurs, then 'try' execution is stopped and the control flows to the beginning of 'catch(err)'. The 'err' variable contains an error object with details about what's happened.
+
+ * So, an error inside the try block does not kill the script, we have a chance to handle it in catch
+
+ * 'try..catch' only works for runtime errors. For 'try..catch' to work, the code must be runnable. In other words, it should be valid JavaScript (it won't work if the code is syntactically wrong)
+
+ * Errors that occur in the reading phase are 'parse-time' errors and are unrecoverable(from inside that code).
+
+ * 'try..catch' works synchronously. If an exception happens in 'scheduled' code, like in setTimeout, then 'try..catch' won't catch it. That's because try..catch actually wraps the setTimeout call that schedules the function. But, the function itself is executed late, when the engine has already left the 'try..catch' constuct.
+
+ * To catch an exception inside a scheduled function, try..catch must be inside that function
+
+ * When an error occurs, JavaScript generates an object containing the details about it. The object is then passed as an argument to catch.
+
+ * For all built-in errors, the error object inside the 'catch' block has two main properties: name (error name, for an undefined variable that's 'reference error) and message (textual message about error details)
+
+ * There are other non-standard properties available in most environments. One of the most widely used and supported is stack (current call stack, a string with info about the sequence of nested calls that led to the error)
+
+ * The 'throw' operator generates an error. The syntax is: throw <error object>
+
+ * Technically we can use anything as an error object, but it's better to use obejcts with name and message properties (to stay compatible with built-in errors)
+
+ * JavaScript has built in constructors for standard errors, such as Error, SyntaxError, ReferenceError, and TypeError. We can invoke these like let error = new Error(message);
+
+ * Catch should only process errors that it knows and 'rethrow' all others.
+
+ * The 'rethrowing' technique can be explained as:
+ 1. Catch gets all errors
+ 2. In the catch(err) {...} block, we analyze the error object err
+ 3. If we don't know how to handle it, then we do throw error
+
+ * try..catch may have one more code clause: finally. If it exists, it runs in all cases (after catch if there were no errors and after catch if there were errors)
+
+ ```JS
+ try {
+     //try to execute the code
+ } catch(e) {
+     //handle errors
+ } finally {
+     //execute always
+ }
+
+ ```
+
+ * The finally clause if often used when we start doing something before try..catch and want to finalize it in any case of outcome. 
+
+ * The finally clause works for any exit from try..catch, including explicit return
+
+ * The try..finally construct, without catch clause, is also useful. We apply it when we don't want to handle errors right here, but want to be sure that processes that we started are finalized
+
+ * The role of the global handler window.onerror is usually not to recover the script execution, but to send the error messages to developers. 
+
+ * The try..catch construct allows us to handle runtime errors. It allows us to try running the code and catch errors that may occur in it.
+
+ * There may be no catch section or no finally, so try..catch and try..finally are also valid.
+
+ * Error objects have the following properties:
+ - message: the human-readable error message
+ - name: the string with error name (error constructor name)
+ - stack (non-standard): the stack at the moment of error creation
+
+ * We can also generate our own errors using the throw operator. Technically, the argument of throw can be anything, but it's usually an error object inheriting from the built-in error class
+
+ * Rethrowing is a pattern of error handling: a catch block usually expects and knows how to handle a particular error type, so it should rethrow errors it doesn't know.
+ 
+ * Even if we don't have 'try..catch', most environments allow you to set up a 'global' error handler to catch errors that fall out. In-browser, that's window.onerror
