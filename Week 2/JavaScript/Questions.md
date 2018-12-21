@@ -48,3 +48,6 @@
 
 11. What type of errors to try..catch blocks work for?
 - try..catch blocks only work for RuntimeErrors
+
+12. When creating a custom error, what attributes should it have?
+- Custom errors should have should have basic error properties, such as name, message, and stack. They should also inherit from JavaScript's built in Error classes.

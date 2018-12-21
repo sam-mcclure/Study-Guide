@@ -158,3 +158,13 @@ W2D5
 * Presentational components are React components that don't specify any behaviors or have internal state, they are only concerned with how things look or how they render
 
 * Presentational components will need container components to actually pass the data from the store and to specify the behavior
+
+W2D6
+
+* The components that access the store, such as the container level components, read this state from it, subscrivbe to this store, and dispatch actions on this store using a top-level store variable
+
+* This works fine for examples, but it doesn't scale to real applications. First of all, it makes your container components harder to test because they reference a specific store, but you might want to supply a different mock store in the test. Secondly, it makes it very hard to implement universal replications that are rendered on the server, because on the server, you want to supply a different store instance for every request because different requests have different data.
+
+* Every container component needs a reference to this store, so unfortunately we have to pass it down to every component as a prop. It's less effort than passing different data through every component, but it's still inconvenient. 
+
+* The problem is that the container components need to have this store instance to get this state from a dispatch action and subscribe to changes. 

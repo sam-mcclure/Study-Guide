@@ -227,3 +227,37 @@
  * Rethrowing is a pattern of error handling: a catch block usually expects and knows how to handle a particular error type, so it should rethrow errors it doesn't know.
  
  * Even if we don't have 'try..catch', most environments allow you to set up a 'global' error handler to catch errors that fall out. In-browser, that's window.onerror
+
+ ## Custom Errors
+
+ * When you develop something, you often need your own error classes to reflect specific things that may go wrong in your tasks. For network operations, you may need HttpError, for database operations DbError, for searching operations NotFoundError, and so on.
+
+ * Your errors should support basic error properties like message, name, and stack. They also might have properties of their own, like statusCode.
+
+ * JavaScript allows us to use throw with any argument, so technically our custom error classes don't need to inherit from error, but if we do, it becomes possible to use obj instanceof Error.
+
+ * As you build your application, your own errors naturally form a heirarchy, for instance HttpTimeoutError may inherit from HttpError, and so on
+
+ ```JS
+ //pseudocode for built in Error class
+ class Error {
+     constructor(message) {
+         this.message = message;
+         this.name = "Error";
+         this.stack = <nested calls/>;
+     }
+ }
+
+  class ValidationError extends Error {
+      constructor(message){
+          super(message);
+          this.name = "ValidationError";
+      }
+  }
+ ```
+
+ * We can inerit from Error and other built-in error classes normally, we just need to take care of the name property and call super
+
+ * Most of the time, we should use instanceof to check for particular errors. It also works with inheritance. But sometimes we have an error object coming from a 3rd-party library and there's no easy way to get the class. Then, the name propery can be used for such checks.
+
+ * Wrapping exceptions is a widespread technique when a function handles low-level exceptions and makes a higher-level object to report about the errors. Low-level exceptions sometimes become properties of that object, like err.cause, but that's not strictly required.
